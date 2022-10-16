@@ -65,31 +65,3 @@ class Validator:
                     elif (function == 'item_nesteddict' and Validator.nestedfunction(self,value, rule[function]) == False):
                         return False
             return True
-
-
-input_dictionary = {
-    "name": "Sulav",
-            "age": 22,
-            "city": "Syangja",
-            "isEngineer": True
-}
-validation_dictionary = {
-    "name": {
-        "type": str,
-        'minlength': 4,
-        'maxlength': 10
-    },
-    'age': {
-        'type': int,
-        'minimum': 0,
-        'maximum': 150
-    },
-    'city': {
-        'type': str
-    },
-    'isEngineer': {
-        'type': bool
-    }
-}
-validator = Validator(input_dictionary, validation_dictionary)
-print(validator.validator())
